@@ -40,17 +40,17 @@ public class studentScore {
             String letterGrade;
             if (finalScore >= 80) {
                 letterGrade = "A";
-            } else if (finalScore >= 75) {
+            } else if (finalScore >= 73) {
                 letterGrade = "B+";
-            } else if (finalScore >= 70) {
+            }  else if (finalScore >= 65) {
                 letterGrade = "B";
-            } else if (finalScore >= 65) {
-                letterGrade = "C+";
             } else if (finalScore >= 60) {
-                letterGrade = "C";
+                letterGrade = "C+";
             } else if (finalScore >= 50) {
+                letterGrade = "C";
+            } else if(finalScore >= 39) {
                 letterGrade = "D";
-            } else {
+            }else {
                 letterGrade = "E";
             }
             // Determine pass/fail
