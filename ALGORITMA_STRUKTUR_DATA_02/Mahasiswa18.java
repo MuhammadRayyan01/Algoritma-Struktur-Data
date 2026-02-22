@@ -1,8 +1,21 @@
 class mahasiswa{
     String nama;
-    int NIM;
-    int kelas;
+    String NIM;
+    String kelas;
     double ipk;
+
+      //  Default Constructor
+    mahasiswa() {
+        System.out.println("Object Mahasiswa dibuat (Default Constructor)");
+    }
+
+    //  Parameterized Constructor
+    mahasiswa(String NIM, String nama, String kelas, double ipk) {
+        this.NIM = NIM;
+        this.nama = nama;
+        this.kelas = kelas;
+        this.ipk = ipk;
+    }
 
 void tampilkanInformasi(){
     System.out.println("Nama : " + nama);
@@ -11,12 +24,17 @@ void tampilkanInformasi(){
     System.out.println("IPK : " + ipk);
 
 }
-void ubahKelas(int kelasBaru){
+void ubahKelas(String kelasBaru){
     kelas = kelasBaru;
 }
 void ubahIPK(double ipkBaru){
-    ipk = ipkBaru;
+    if (ipkBaru >= 0.0 && ipkBaru <= 4.0) {
+        this.ipk = ipkBaru;
+    } else {
+        System.out.println("GPA is invalid. Must be between 0.0 and 4.0");
+    }
 }
+
 String nilaiKinerja(){
     if (ipk >= 3.5){
         return "Sangat Baik";
@@ -28,9 +46,4 @@ String nilaiKinerja(){
         return "Kurang";
     }
 }
-}
-public class Mahasiswa18 {
-    public static void main(String[] args) {
-        
-    }
 }
