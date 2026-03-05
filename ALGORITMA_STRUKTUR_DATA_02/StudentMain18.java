@@ -8,7 +8,7 @@ public class  StudentMain18 {
 
         // Accessing attributes
         mhs1.NIM = "2241720171";
-        mhs1.nama = "Muhammad Ali Farhan";
+        mhs1.nama = "Ahmad Fauzan";
         mhs1.kelas = "SI 2J";
         mhs1.ipk = 3.2;
 

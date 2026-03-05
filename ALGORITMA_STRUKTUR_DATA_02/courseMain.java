@@ -2,7 +2,7 @@ public class courseMain {
 
     public static void main(String[] args) {
 
-        // 🔹 Object 1 (Default Constructor)
+        //  Object 1 (Default Constructor)
         course course1 = new course();
         course1.kodeCourse = "CS101";
         course1.name = "Introduction to Programming";
@@ -18,7 +18,7 @@ public class courseMain {
         course1.displayInformation();
 
 
-        // 🔹 Object 2 (Parameterized Constructor)
+        // Object 2 (Parameterized Constructor)
         course course2 = new course("CS202", "Data Structures", 3, 48);
 
         course2.displayInformation();

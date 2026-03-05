@@ -2,7 +2,7 @@ public class LectureMain {
 
     public static void main(String[] args) {
 
-        // 🔹 Object 1 (Default Constructor)
+        //  Object 1 (Default Constructor)
         Lecture18 lecturer1 = new Lecture18();
         lecturer1.idLecturer = "L001";
         lecturer1.name = "Dr. Ahmad";
