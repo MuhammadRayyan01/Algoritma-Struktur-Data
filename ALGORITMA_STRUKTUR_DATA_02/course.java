@@ -1,17 +1,17 @@
  public class course {
 
-    // 🔹 Attributes
+    //  Attributes
     String kodeCourse;
     String name;
     int SKS;
     int numberOfHours;
 
-    // 🔹 Default Constructor
+    //  Default Constructor
     public course() {
         System.out.println("Course object created using default constructor.");
     }
 
-    // 🔹 Parameterized Constructor
+    //  Parameterized Constructor
     public course(String kodeCourse, String name, int SKS, int numberOfHours) {
         this.kodeCourse = kodeCourse;
         this.name = name;
@@ -19,7 +19,7 @@
         this.numberOfHours = numberOfHours;
     }
 
-    // 🔹 Display all course information
+    //  Display all course information
     public void displayInformation() {
         System.out.println("Course Code     : " + kodeCourse);
         System.out.println("Course Name     : " + name);
@@ -28,7 +28,7 @@
         System.out.println("----------------------------------------");
     }
 
-    // 🔹 Change SKS
+    //  Change SKS
     public void changeSKS(int sksNew) {
         if (sksNew > 0) {
             SKS = sksNew;
@@ -38,7 +38,7 @@
         }
     }
 
-    // 🔹 Add hours
+    //  Add hours
     public void addHours(int hours) {
         if (hours > 0) {
             numberOfHours += hours;
@@ -49,7 +49,7 @@
         }
     }
 
-    // 🔹 Reduce hours
+    //  Reduce hours
     public void reduceHours(int hours) {
         if (hours > 0) {
             if (numberOfHours >= hours) {
