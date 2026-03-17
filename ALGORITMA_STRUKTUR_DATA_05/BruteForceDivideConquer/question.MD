@@ -8,16 +8,16 @@ Answer: Beside for loop, we can use while loop or do-while loop, with the same c
 Answer: i'll explain the visual of first method and second method, lets say we input 5 for the n.
 first method: because we use for loop with the limit of the number (5):
 initiate the i = 1 and multiply it with the iteration. the result will be the new value
-1 _ 1 = 1
-1 _ 2 = 2
-2 _ 3 = 6
-6 _ 4 = 24
-24 \* 5 = 120
+1 * 1 = 1
+1 * 2 = 2
+2 * 3 = 6
+6 * 4 = 24
+24 * 5 = 120
 
 While the second method:
 doing recursively, starting from the number we input
-5 _ (5-1) _ (4-1) _ (3-1) _ (2-1)
-5 _ 4 _ 3 _ 2 _ 1 = 120
+5 * (5-1) * (4-1) * (3-1) * (2-1)
+5 * 4 * 3 * 2 * 1 = 120
 
     4. Make a conclusion about the differences in how each method works. factorialBF()  and factorialDC()!
 
