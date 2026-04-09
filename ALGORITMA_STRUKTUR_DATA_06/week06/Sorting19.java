@@ -18,6 +18,19 @@ public void bubbleSort(){
         }
     }
 }
+public void selectionSort(){
+    for(int i=0; i<size-1; i++){
+        int minIndex = i;
+        for(int j=i+1; j<size; j++){
+            if(data[j]<data[minIndex]){
+                minIndex = j;
+            }
+        }
+        int temp = data[i];
+        data[i] = data[minIndex];
+        data[minIndex] = temp;
+    }
+}
 public void print(){
     for(int num : data){
         System.out.print(num +" ");
