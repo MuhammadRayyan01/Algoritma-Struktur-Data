@@ -20,7 +20,7 @@ public void bubbleSort(){
 }
 public void print(){
     for(int num : data){
-        System.out.println(num +" ");
+        System.out.print(num +" ");
     }
     System.out.println();
 }
