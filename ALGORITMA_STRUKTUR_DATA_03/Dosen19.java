@@ -1,4 +1,3 @@
-package ALGORITMASTRUKTURDATA03;
 public class Dosen19 {
     String code;
     String name;
