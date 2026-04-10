@@ -3,7 +3,7 @@ public class topStudent19 {
     int idx;
  public topStudent19() {
         listStudents = new Student19[5];}
-        
+
     public void add(Student19 student){
         if(idx < listStudents.length){
             listStudents[idx] = student;
@@ -30,5 +30,21 @@ public class topStudent19 {
             }
         }
     }
-    
+    public void selectionSort(){
+        for (int i = 0; i < listStudents.length-1; i++) {
+            int minIdx = i;
+            for (int j = i+1; j < listStudents.length; j++) {
+                if(listStudents[j].gpa < listStudents[minIdx].gpa){
+                    minIdx = j;
+                }
+            }
+            // swap minimum with first element
+            Student19 temp = listStudents[minIdx];
+            listStudents[minIdx] = listStudents[i];
+            listStudents[i] = temp;
+
+        }
+          
 }
+}
+
