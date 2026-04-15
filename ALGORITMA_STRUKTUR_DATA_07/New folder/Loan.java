@@ -36,45 +36,6 @@ public class Loan {
             System.out.println("------------------");
         }
     }
-    public void sortLoanByFine(){
-        for (int i = 0; i < fine.length - 1; i++) {
-            for (int j = 0; j < fine.length - i - 1; j++) {
-                if (fine[j] < fine[j + 1]) {
-                    // Swap fine
-                    int tempFine = fine[j]; 
-                    fine[j] = fine[j + 1];
-                    fine[j + 1] = tempFine;
-                    
-                    // Swap late
-                    int tempLate = late[j]; 
-                    late[j] = late[j + 1]; 
-                    late[j + 1] = tempLate;
-                    
-                    // Swap student
-                    Student tempStudent = std[j]; 
-                    std[j] = std[j + 1]; 
-                    std[j + 1] = tempStudent;
-                    
-                    // Swap book
-                    Book tempBook = book[j]; 
-                    book[j] = book[j + 1]; 
-                    book[j + 1] = tempBook;
-                    
-                    // Swap loanDuration
-                    int tempDuration = loanDuration[j]; 
-                    loanDuration[j] = loanDuration[j + 1]; 
-                    loanDuration[j + 1] = tempDuration;
-                }
-            }
-        }
-    }
-    public void showSortedByFine(){
-        System.out.println("=== SORTED BY FINE (DESCENDING) ===");
-        sortLoanByFine();
-        for (int i = 0; i < std.length; i++) {
-            System.out.println((i+1) + ". " + std[i].id + " | " + std[i].name + " | " + book[i].title + " | Late: " + late[i] + " days | Rp " + fine[i]);
-        }
-    }
     public void searchBinary(String title){
         int left = 0;
         int right = book.length - 1;

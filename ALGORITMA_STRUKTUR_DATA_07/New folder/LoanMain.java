@@ -10,6 +10,7 @@ public class LoanMain {
         initializeData();
         showMenu();
     }
+    
     static void initializeData() {
         students = new Student[3];
         students[0] = new Student("22001", "Abdul", "Informatics Engineering");
@@ -45,9 +46,9 @@ public class LoanMain {
             System.out.println("5. Search Loan by NIM");
             System.out.println("6. Exit");
             System.out.print("Choose: ");
-            String choice = scanner.nextLine();
             
-        switch(choice) {
+            String choice = scanner.nextLine();
+            switch(choice) {
                 case "1": showStudent(); 
                 break;
                 case "2": showBooks(); 
@@ -64,24 +65,58 @@ public class LoanMain {
                 default: System.out.println("Invalid!");
             }}
         }
-     static void showStudent() {
+    
+    static void showStudent() {
         System.out.println("=== ALL STUDENTS ===");
         for (int i = 0; i < students.length; i++) {
-        students[i].showStudent();
+            System.out.println("Student " + (i+1) + ": " + students[i].id + " | " + students[i].name + " | " + students[i].studyProgram);
         }
     }
     static void showBooks() {
         System.out.println(" books: ");
         for (int i = 0; i < books.length; i++) {
-        books[i].Display();  
+            System.out.println("Book " + (i+1) + ": " + books[i].code + " | " + books[i].title + " | " + books[i].year);
         }
     }
     static void showLoan() {
         System.out.println("Loan Information");
-        loan.showLoan();
+        for (int i = 0; i < loan.std.length; i++) {
+            System.out.println("Loan " + (i+1) + ": " + loan.std[i].id + " | " + loan.std[i].name + " | " + 
+            loan.book[i].title + " | " + loan.loanDuration[i] + " days | Late: " + loan.late[i] + " days | Fine: Rp " + loan.fine[i]);
+        }
     }
     static void sortingByFine() {
-        loan.showSortedByFine();
+        Student[] tempStd = new Student[loan.std.length];
+        Book[] tempBook = new Book[loan.book.length];
+        int[] tempFine = new int[loan.fine.length];
+        int[] tempLate = new int[loan.late.length];
+        for (int i = 0; i < tempStd.length; i++) {
+            tempStd[i] = loan.std[i];
+            tempBook[i] = loan.book[i];
+            tempFine[i] = loan.fine[i];
+            tempLate[i] = loan.late[i];
+        }   
+        for (int i = 0; i < tempFine.length - 1; i++) {
+            for (int j = 0; j < tempFine.length - i - 1; j++) {
+                if (tempFine[j] < tempFine[j + 1]) {
+                    int fine = tempFine[j]; 
+                    tempFine[j] = tempFine[j + 1];
+                    tempFine[j + 1] = fine;
+                    int late = tempLate[j]; 
+                    tempLate[j] = tempLate[j + 1]; 
+                    tempLate[j + 1] = late;
+                    Student student = tempStd[j]; 
+                    tempStd[j] = tempStd[j + 1]; 
+                    tempStd[j + 1] = student;
+                    Book book = tempBook[j]; 
+                    tempBook[j] = tempBook[j + 1]; 
+                    tempBook[j + 1] = book;
+}}
+}
+        System.out.println("SORTED BY FINE (DESCENDING)");
+        for (int i = 0; i < tempFine.length; i++) {
+        System.out.println((i+1) + ". " + tempStd[i].id + " | " + tempStd[i].name + " | " + tempBook[i].title + " | Late: " + tempLate[i] + " days | Rp " + tempFine[i]);
+        }
     }
     static void searchLoanByNIM() {
         System.out.print("Enter NIM: ");
