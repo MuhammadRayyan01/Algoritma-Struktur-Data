@@ -58,7 +58,7 @@ By reversing the comparison conditions, the algorithm correctly adjusts the sear
 
 ---
 
-## **5. Modify program so that the students amount inserted is matched with user input**
+5. Modify program so that the students amount inserted is matched with user input\*\*
 
 Answer + Narrative:
 The program can be modified to make the number of students dynamic based on user input, instead of using a fixed-size array.
@@ -81,7 +81,6 @@ Student[] listStd;
 public SearchStudent(int size){
     listStd = new Student[size];
 }
-```
 
-Narrative:
 With this modification, the program becomes more flexible because the number of students is determined by user input. This allows the system to handle different data sizes dynamically.
+```
