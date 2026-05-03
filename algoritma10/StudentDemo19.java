@@ -39,19 +39,27 @@ do{
         case 3:
             student19 lihat = Stack.peek();
             if(lihat != null){
-            System.out.println("tugas terakhir dikumpulkan oleh "+ lihat.name);
+            System.out.println("tugasdikumpulkan oleh "+ lihat.name);
             }
             break;
         case 4:
             System.out.println("daftar semua tugas");
+            System.out.println(Stack.top + 1 + " tugas di dalam stack");
             System.out.println("nama\tNIM\tKelas");
             Stack.print();
+            break;
+        case 5:
+            System.out.println("lihat pengumpul pertama");
+            student19 lihatPertama = Stack.Stack[0];
+            if(lihatPertama != null){
+            System.out.println("tugas dikumpulkan oleh "+ lihatPertama.name);
+            }
             break;
         default:
             System.out.println("pilihan tidak valid");
         break;
     }
-}while (choice >= 1 && choice <= 4);
+}while (choice >= 1 && choice <= 5);
 
 }
 }
