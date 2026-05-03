@@ -11,6 +11,7 @@ do{
     System.out.println("2.menilai tugas");
     System.out.println("3.melihat tugas teratas");
     System.out.println("4.melihat daftar tugas");
+    System.out.println("5.melihat tugas pertama");
     System.out.println("pilih");
     choice = sc.nextInt();
     sc.nextLine();
