@@ -34,6 +34,8 @@ do{
             int grade = sc.nextInt();
             dinilai.grading(grade);
             System.out.printf("nilai tugas %s adalah %d\n", dinilai.name, grade);
+            String binary = Stack.ConversiontoBinary(grade);
+            System.out.printf("nilai tugas %s dalam biner adalah %s\n", dinilai.name, binary);
             }
             break;
         case 3:
