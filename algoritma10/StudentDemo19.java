@@ -30,13 +30,13 @@ do{
         case 2:
             student19 dinilai = Stack.peek();
             if (dinilai != null) {
-            System.out.println("menilai tugas dari "+ dinilai.name);
-            System.out.println("masukkan nilai (0-100)");
-            int grade = sc.nextInt();
-            dinilai.grading(grade);
-            System.out.printf("nilai tugas %s adalah %d\n", dinilai.name, grade);
-            String binary = Stack.ConversiontoBinary(grade);
-            System.out.printf("nilai tugas %s dalam biner adalah %s\n", dinilai.name, binary);
+                System.out.println("menilai tugas dari "+ dinilai.name);
+                System.out.println("masukkan nilai (0-100)");
+                int grade = sc.nextInt();
+                dinilai.grading(grade);
+                System.out.printf("nilai tugas %s adalah %d\n", dinilai.name, grade);
+                String binary = Stack.ConversiontoBinary(grade);
+                System.out.printf("nilai tugas %s dalam biner adalah %s\n", dinilai.name, binary);
             }
             break;
         case 3:
