@@ -61,7 +61,7 @@ void enqueue(int dt){
         front = rear = 0;
     }else{
         if(rear==max-1){
-            rear = 0;
+            rear = 0 ;
         }else{
             rear++;
         }
