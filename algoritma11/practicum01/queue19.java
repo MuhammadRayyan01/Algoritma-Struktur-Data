@@ -57,12 +57,40 @@ void print(){
 }
 void enqueue(int dt){
     if (!isFull()){
+        if(isEmpty()){
         front = rear = 0;
     }else{
         if(rear==max-1){
             rear = 0;
+        }else{
+            rear++;
         }
     }
+    data[rear] = dt;
+    size++;
+    System.out.printf("%d is succesfully added at index %d\n" ,dt,rear);
+    }else{
+        System.out.println("queue is full");
+    }
+}
+int dequeue(){
+    int dt = 0;
+    if(!isEmpty()){
+        dt = data[front];
+        size--;
+        if(isEmpty()){
+            front=rear=-1;
+        }else{
+            if(front == max - 1){
+                front=0;
+            }else{
+                front++;
+            }
+        }
+    }else{
+        System.out.println("queue is empty");
+    }
+    return dt;
 }
 }
 
