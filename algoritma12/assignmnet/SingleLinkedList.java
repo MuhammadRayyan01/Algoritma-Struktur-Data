@@ -1,16 +1,16 @@
-package algoritma12.practicum01;
+package algoritma12.assignmnet;
 
 
 public class SingleLinkedList {
-    Node19 head;
-    Node19 tail;
+ Node head;
+    Node tail;
 
 boolean isEmpty(){
     return (head ==null);
 }
 void print(){
         if(!isEmpty()){
-            Node19 tmp = head;
+            Node tmp = head;
             System.out.println("LinkedList Data:");
             while(tmp!=null){
                 tmp.data.print();
@@ -20,8 +20,28 @@ void print(){
             System.out.println("LinkedList is empty!!");
         }
     }
+void printFirst(){
+    Node tmp = head;
+    if(tmp==head){
+        System.out.println("display first queue");
+        tmp.data.print();
+    }else{
+        System.out.println("empty");
+    }
+    }
+    
+void printLast(){
+     Node tmp = tail;
+
+    if(tmp == tail){
+        System.out.println("display last queue");
+        tmp.data.print();
+    }else{
+        System.out.println("empty");
+    }
+}
 void addFirst(Student19 std){
-        Node19 newNode = new Node19(std, null);
+        Node newNode = new Node(std, null);
         if(isEmpty()){
             head = newNode;
             tail = newNode;
@@ -31,7 +51,7 @@ void addFirst(Student19 std){
         }
 }
 void addLast (Student19 std){
-        Node19 newNode = new Node19(std, null);
+        Node newNode = new Node(std, null);
         if(isEmpty()){
             head = newNode;
             tail = newNode;
@@ -41,8 +61,8 @@ void addLast (Student19 std){
     }
 }
 void insertAfter(Student19 std, String key){
-        Node19 newNode = new Node19(std, null);
-        Node19 temp = head;
+        Node newNode = new Node(std, null);
+        Node temp = head;
         do {
             if (temp.data.name.equalsIgnoreCase(key)) {
                 newNode.next = temp.next;
@@ -61,11 +81,11 @@ public void insertAt(int index,Student19 std){
     }else if(index == 0){
         addFirst(std);
     }else{
-        Node19 temp = head;
+        Node temp = head;
         for( int i = 0; i < index -1 ; i++){
             temp = temp.next;
         }
-        temp.next = new Node19(std,temp.next);
+        temp.next = new Node(std,temp.next);
         if(temp.next.next == null){
             tail = temp.next;
         }
@@ -79,7 +99,7 @@ if(isEmpty()){
 System.out.println("linked list is empty");
 return null;
 }
-Node19 tmp = head;
+Node tmp = head;
 for (int i = 0; i < idx && tmp != null; i++){
     tmp = tmp.next;
 }
@@ -91,7 +111,7 @@ if(isEmpty()){
     System.out.println("LinkedList is empty!!");
     return -1;
 }
-Node19 tmp = head;
+Node tmp = head;
 int idx = 0;
 while(tmp != null && !tmp.data.name.equalsIgnoreCase(key)){
     tmp = tmp.next;
@@ -120,7 +140,7 @@ void removeLast(){
     }else if(head==tail){
         head = tail = null;
     }else{
-        Node19 tmp = head;
+        Node tmp = head;
         while(tmp.next != tail){
             tmp = tmp.next;
         }
@@ -128,12 +148,16 @@ void removeLast(){
         tail = tmp;
     }
 }
+public void clear(){
+    head = null;
+    tail = null;
+}
 
 public void remove(String key) {
 if (isEmpty()) {
     System.out.println("LinkedList is empty!!");
 } else {
-    Node19 temp = head;
+    Node temp = head;
     while (temp != null) {
     if ((temp.data.name.equalsIgnoreCase(key)) && (temp == head)) {
         removeFirst();
@@ -154,7 +178,7 @@ public void removeAt(int index) {
 if (index == 0) {
     removeFirst();
 } else {
-    Node19 temp = head;
+    Node temp = head;
     for (int i = 0; i < index - 1; i++) {
         temp = temp.next;
     }
@@ -164,9 +188,5 @@ if (temp.next == null) {
     }
 }
 }
-
-
+    
 }
-
-
-
