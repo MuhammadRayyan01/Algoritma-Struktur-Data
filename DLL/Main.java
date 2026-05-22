@@ -16,6 +16,16 @@ public class Main {
     dll.print();
     dll.insertAfter("120", new Student("116", "Eiyu", "TI-1I", 3.4));
     dll.print();
+    System.out.println("=========");
+    dll.removeFirst();
+    dll.print();
+    dll.removeLast();
+    dll.print();
+    dll.remove(1);
+    dll.print();
+    System.out.println("ASSIGNMENT (ADD)");
+    dll.add(new Student("117", "Lina", "TI-1I", 3.9), 2);
+    dll.print();
     }
 
 }
