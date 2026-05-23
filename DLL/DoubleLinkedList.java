@@ -120,32 +120,49 @@ public class DoubleLinkedList {
                 head.prev = null;
             }
     }
-    
+    // learn this to know remove on last index concept
     void removeLast(){
+    //if the list is empty
         if(isEmpty()){
             System.out.println("Double linked list is currently empty!!");
+    //if the list has only one node
         }else if(head == tail){
             head = tail = null;
         }else{
+    //else, we declare new tail is the previous one
             tail = tail.prev;
+    //and after that, we delete the origin tail (become null)
             tail.next = null;
         }
     }
+    // remove the node based on index we search
     void remove(int index){
+        // because index start from 0, we need to add if user doesn't miss type to negative values
         if(index < 0){
             System.out.println("Index must be greater than or equal to 0");
+        //if its empty list
         }else if(isEmpty()){
             System.out.println("Double linked list is currently empty!!");
+        //if index found at 0, we can just use remove first
         }else if(index == 0){
             removeFirst();
+        //else, we do the default concept of iteration
         }else{
+        //we declare temp start from head
             Node temp = head;
+        //using for loop, i start from 0, stop before index, increment
             for(int i=0; i<index; i++){
+        // temp (patokan) will be move to the next and so on
                 temp = temp.next;
             }
+        // if patokan is tail, just use remove last
             if(temp == tail){
                 removeLast();
-        }else{
+        // else, between head and tail
+            }else{
+        /*in between head and tail, we delete node by replacing his next 
+        pointer and previous pointer so the node that we want to delete 
+        is become unknown, which we can call it deleted*/
                 temp.prev.next = temp.next;
                 temp.next.prev = temp.prev;
             }
