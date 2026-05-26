@@ -6,8 +6,8 @@ public class Main {
 static void menu() {
         System.out.println("1. Add Queue");
         System.out.println("2. Print Queue");
-        System.out.println("3. Remove Queue");
-        System.out.println("4. Order Queue");
+        System.out.println("3. Remove Queue and order");
+        System.out.println("4. Order Queue report");
         System.out.println("5. Exit");
     }
 public static void main(String[] args) {
@@ -15,6 +15,7 @@ public static void main(String[] args) {
 
     BuyerDll buyerDll = new BuyerDll();
     OrderDll orderDll = new OrderDll();
+    int queueNumber = 1;
     int choice;
 
     // Your code here
@@ -31,10 +32,11 @@ public static void main(String[] args) {
             String phone = sc.next();
             System.out.println("================================");
 
-            Buyer buyer = new Buyer(nama, phone);
+            Buyer buyer = new Buyer(nama, phone, queueNumber);
             buyerDll.addLast(buyer);
             buyer.print();
             System.out.println("================================");
+            queueNumber++;
             break;
         case 2:
             // Print Queue
@@ -43,10 +45,27 @@ public static void main(String[] args) {
             System.out.println("================================");
             buyerDll.print();
             System.out.println("================================");
-            
             break;
         case 3:
-            // Remove Queue
+            // Remove Queue and order
+             System.out.println("================================");
+            if (buyerDll.isEmpty()) {
+                System.out.println("No buyers in queue. Please add a buyer first.");
+                System.out.println("================================");
+                break;
+            }
+            Buyer currentBuyer = buyerDll.getFirst();
+            System.out.println("Enter order code: ");
+            String orderCode = sc.next();
+            System.out.println("Enter order: ");
+            String order = sc.next();
+            System.out.println("Enter price: ");
+            int price = sc.nextInt();
+            
+            System.out.println("================================");
+
+            Order newOrder = new Order(currentBuyer, orderCode, order, price);
+            orderDll.addLast(newOrder);
             System.out.println("================================");
             System.out.println("Removing queue");
             System.out.println("================================");
@@ -57,20 +76,8 @@ public static void main(String[] args) {
         case 4:
             // input and display order queue
             System.out.println("================================");
-            System.out.println("Enter order code: ");
-            String orderCode = sc.next();
-            System.out.println("Enter order: ");
-            String order = sc.next();
-            System.out.println("Enter price: ");
-            int price = sc.nextInt();
-            System.out.println("================================");
-
-            Order newOrder = new Order(orderCode, order, price);
-            orderDll.addLast(newOrder);
-            System.out.println("===============================");
-            System.out.println("================================");
-
             System.out.println("Displaying order queue");
+            orderDll.sort();
             orderDll.print();
             orderDll.totalPrice();
             System.out.println("================================");
