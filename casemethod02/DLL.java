@@ -54,6 +54,7 @@ class BuyerDll{
             current = current.next;
         }
     }
+<<<<<<< HEAD
     void removeLast(){
         if(isEmpty()){
             System.out.println("Double linked list is currently empty!!");
@@ -100,6 +101,15 @@ class BuyerDll{
     }
 
 
+=======
+    Buyer getFirst(){
+        if(isEmpty()){
+            return null;
+        }
+        return head.data;
+    }
+}
+>>>>>>> c6ecf6a3eaebbbd1eded66ea410379acd0172ca7
 class OrderDll{
     OrderNode head;
     OrderNode tail;
@@ -148,7 +158,7 @@ class OrderDll{
     void print(){
         OrderNode current = head;
         while(current != null){
-            System.out.println(current.data.orderCode + " " + current.data.order + " " + current.data.price);
+            System.out.println(current.data.buyer.nama + " " + current.data.orderCode + " " + current.data.order + " " + current.data.price);
             current = current.next;
         }
     }
@@ -160,5 +170,45 @@ class OrderDll{
             temp = temp.next;
         }
         System.out.println("Total Price: " + total);
+    }
+    /*void sort(){
+        if(isEmpty()){
+            System.out.println("Data is empty!!");
+            return;
+        }
+        OrderNode temp = head;
+        while(temp != null){
+            OrderNode index = temp.next;
+            while(index != null){
+                if(temp.data.price < index.data.price){
+                    Order tempData = temp.data;
+                    temp.data = index.data;
+                    index.data = tempData;
+                }
+                index = index.next;
+            }
+            temp = temp.next;
+        }
+    }*/
+   void sort(){
+
+    if(isEmpty()){
+        System.out.println("Data is empty!!");
+        return;
+    }
+
+    OrderNode temp = head;
+    while(temp != null){
+        OrderNode index = temp.next;
+        while(index != null){
+            if(temp.data.order.compareToIgnoreCase(index.data.order) > 0){
+                Order tempData = temp.data;
+                temp.data = index.data;
+                index.data = tempData;
+            }
+            index = index.next;
+        }
+        temp = temp.next;
+    }
     }
 }
