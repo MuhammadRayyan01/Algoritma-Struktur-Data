@@ -93,6 +93,6 @@ public static void main(String[] args) {
             System.out.println("Invalid choice. Please try again.");
             break;
     }
-    }while(choice != 5);
+    }while(choice != 6);
 }
 }

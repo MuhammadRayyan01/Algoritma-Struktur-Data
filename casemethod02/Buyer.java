@@ -2,7 +2,8 @@ package casemethod02;
 
 public class Buyer {
     String nama, phone;
-    public Buyer(String nama, String phone) {
+    int queueIndex;
+    public Buyer(String nama, String phone,int queueIndex) {
         this.nama = nama;
         this.phone = phone;
     }
