@@ -8,7 +8,8 @@ static void menu() {
         System.out.println("2. Print Queue");
         System.out.println("3. Remove Queue");
         System.out.println("4. Order Queue");
-        System.out.println("5. Exit");
+        System.out.println("5. Cancel queue");
+        System.out.println("6.exit");
     }
 public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
@@ -29,9 +30,11 @@ public static void main(String[] args) {
             String nama = sc.next();
             System.out.println("Enter buyer phone: ");
             String phone = sc.next();
+            System.out.println("queueIndex: ");
+            int queueIndex = sc.nextInt();
             System.out.println("================================");
 
-            Buyer buyer = new Buyer(nama, phone);
+            Buyer buyer = new Buyer(nama, phone, queueIndex );
             buyerDll.addLast(buyer);
             buyer.print();
             System.out.println("================================");
@@ -76,8 +79,15 @@ public static void main(String[] args) {
             System.out.println("================================");
             break;
         case 5:
-            // Exit
-            System.out.println("Exiting...");
+            // cancel queue
+            System.out.println("which queue you want to cancel?");
+            int queueNumber = sc.nextInt();
+            buyerDll.remove(queueNumber);
+            buyerDll.print();
+            break;
+        case 6:
+            //exit menu
+            System.out.println("exiting");
             break;
         default:
             System.out.println("Invalid choice. Please try again.");

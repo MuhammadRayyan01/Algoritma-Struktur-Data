@@ -22,6 +22,7 @@ class BuyerDll{
             head.prev = newNode;
             head = newNode;
         }
+        size++;
     }
     void addLast(Buyer data){
         BuyerNode newNode = new BuyerNode(data);
@@ -32,6 +33,7 @@ class BuyerDll{
             newNode.prev = tail;
             tail = newNode;
         }
+        size++;
     }
    void removeFirst(){
         if(isEmpty()){
@@ -39,11 +41,11 @@ class BuyerDll{
             return;
         }else if(head == tail){
             head = tail = null; 
-
         }else{
             head = head.next;
             head.prev = null;
         }
+        size--;
     }
     void print(){
         BuyerNode current = head;
@@ -52,7 +54,52 @@ class BuyerDll{
             current = current.next;
         }
     }
-}
+    void removeLast(){
+        if(isEmpty()){
+            System.out.println("Double linked list is currently empty!!");
+        }else if(head == tail){
+            head = tail = null;
+            size--;
+        }else{
+            tail = tail.prev;
+            tail.next = null;
+            size--;
+        }
+    }
+    void remove(int queueIndex){
+        if(queueIndex < 0){
+            System.out.println("Index must be greater than or equal to 0");
+            return;
+        }
+        if(isEmpty()){
+            System.out.println("Double linked list is currently empty!!");
+            return;
+        }
+        if(queueIndex == 0){
+            removeFirst();
+            return;
+        }
+        if(queueIndex >= size){
+            System.out.println("Index is invalid!!");
+            return;
+        }
+
+        BuyerNode temp = head;
+        for(int i = 0; i < queueIndex; i++){
+            temp = temp.next;
+        }
+
+        if(temp == tail){
+            removeLast();
+        }else{
+            temp.prev.next = temp.next;
+            temp.next.prev = temp.prev;
+            size--;
+        }
+    }
+    }
+
+
 class OrderDll{
     OrderNode head;
     OrderNode tail;

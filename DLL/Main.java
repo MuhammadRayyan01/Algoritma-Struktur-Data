@@ -26,6 +26,7 @@ public class Main {
     System.out.println("ASSIGNMENT (ADD)");
     dll.add(new Student("117", "Lina", "TI-1I", 3.9), 2);
     dll.print();
+    dll.add(null, 0);
     }
 
 }
