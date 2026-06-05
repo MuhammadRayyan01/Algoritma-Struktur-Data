@@ -35,6 +35,23 @@ public class BinaryTree {
             }
         }
     }
+
+    void addRecursive(Student19 data){
+        root = addRecursive(root, data);
+    }
+    Node19 addRecursive(Node19 current, Student19 data){
+    if (current == null) {
+        return new Node19(data);
+    }
+    if (data.ipk < current.data.ipk) {
+        current.left = addRecursive(current.left, data);
+    } else if (data.ipk > current.data.ipk) {
+        current.right = addRecursive(current.right, data);
+    }
+    return current;
+    }
+
+
     public boolean find(double ipk){
         boolean result = false;
         Node19 current = root;
@@ -50,6 +67,43 @@ public class BinaryTree {
         }
         return result;
     }
+
+    public Student19 getMinIPK(){
+    if (isEmpty()) {
+        return null;
+    }
+    Node19 current = root;
+    while (current.left != null) {
+        current = current.left;
+    }
+    return current.data;
+    }
+
+    public Student19 getMaxIPK(){
+    if (isEmpty()) {
+        return null;
+    }
+    Node19 current = root;
+    while (current.right != null) { 
+        current = current.right;
+    }
+    return current.data;
+    }
+
+    void displayStudentsWithIPKAbove(double threshold) {
+    displayStudentsWithIPKAbove(root, threshold);
+    }
+    void displayStudentsWithIPKAbove(Node19 node, double threshold) {
+    if (node != null) {
+        if (node.data.ipk > threshold) {
+        node.data.print();
+        }
+        displayStudentsWithIPKAbove(node.left, threshold);
+        displayStudentsWithIPKAbove(node.right, threshold);
+    }
+    }
+
+
     public void traversePreOrder (Node19 node){
     if(node != null){
         node.data.print();
