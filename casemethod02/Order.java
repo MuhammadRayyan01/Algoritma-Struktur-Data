@@ -12,6 +12,8 @@ public class Order {
         this.order = order;
         this.price = price;
     }
-    }
+    public void print() {
+        System.out.println(orderCode + " " + order + " " + price);
+    }}
     
 
